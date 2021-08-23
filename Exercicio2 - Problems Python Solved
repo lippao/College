@@ -1,0 +1,19 @@
+Exercício 2:
+Faça uma função que receba o nome e sobrenome de uma pessoa e retorne a primeira
+letra de seu nome e seu sobrenome concatenando com a string @algoritmos.com.br. No
+algoritmo principal deverá ser apresentada a mensagem ao usuário contendo seu nome
+completo e seu email.
+Imprima na tela um teste do seu programa utilizando o seu nome e sobrenome concatenado com os dois últimos dígitos do seu RU.
+Sra Luciane Kanashiro, seu email é lkanashiro16@algoritmos.com.br
+Solução do aluno:
+#EXERC2_
+def gera_email(nome:str, sobrenome:str):
+ if len(nome) > 0 and len(sobrenome) > 0:
+ return f"Sr(a). {nome} {sobrenome}, seu e-mail é {nome[0].lower() + sobrenome.lower() + '42@algoritmos.com.br'}"
+ else:
+ return None
+
+print(gera_email('Felippe', 'Maciel'))
+#achei este metodo mais simples de resolver
+#utilizei o lower para transformar em minusculo os caracteres digitados
+
