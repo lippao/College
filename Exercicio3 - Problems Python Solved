@@ -40,3 +40,5 @@ opcao = int(input('Cadastrar novo doador? 0 - Não 1 - Sim '))
 if len(doadores) > 0:
 print(f'Lista participantes: {doadores}')
 print(f'O sorteado foi: {lista_sorteio()}')
+
+
