@@ -1,0 +1,39 @@
+Exercício 3:
+Um canal de jogos do youtube está fazendo um sorteio para angariar doações para pessoas em situação de vulnerabilidade social. A cada 10,00 doado o nome da pessoa é inserido em uma lista de sorteio, por exemplo:
+Ruth doou 20,00;
+Maria doou 30,00;Fernando doou 50,00;
+A lista de sorteio estará com os valores:
+listaSorteio = [‘Ruth’, ‘Ruth’, ’Maria’, ’Maria’, ’Maria’, ’Fernando’, ’Fernando’, ’Fernando’, ’Fernando’, ’Fernando’]
+Implemente um programa para cadastrar o nome das pessoas que doaram. O programa
+deve embaralhar a lista, sortear o ganhador e imprimir o seu nome.
+Imprima na tela um teste do seu programa utilizando como primeiro doador o seu nome e os dois
+últimos dígitos do seu RU para o valor doado. Não se esqueça de imprimir também a lista de sorteio.
+Sra Luciane Kanashiro, seu email é lkanashiro16@algoritmos.com.br
+Solução do aluno:
+#EXERC3_
+import random
+doadores = []
+#defini o valor "doacao" como flutuante
+#o valor de doacao e definido pelo numero de vexes que 10 reais pode ser dividido pelo valor da doacao do doador
+def lista_sorteio(nome:str, doacao:float):
+doadores.extend( ((nome + ' ') * int(doacao//10)).split() )
+return
+#inclui esta função para mesclar a lista de doadores
+def lista_sorteio():
+random.shuffle(doadores)
+print(f'Lista mesclada: {doadores}')
+return random.choice(doadores)
+opcao = int(input('Cadastrar doador? 0 - Não 1 - Sim '))
+while opcao == 1:
+doador = input('Nome: ')
+valor = float(input('Valor doado: '))
+#utilizei a variavel doador com o metodo strip para limpar espa-
+çoes em branco
+#dentro do laço de repeticao enquanto uma variavel estiver errada ele vai ficar repetindo
+while len(doador.strip()) == 0 or valor < 10:
+print('Verifique o valor digitado, Valor mínimo R$ 10,00')
+doador = input('Nome: ')
+valor = float(input('Valor doado: '))
+#usei o valor como float para aceita valores quebrados, porem acima de $10
+cadastra_doador(doador, valor)
+opcao = int(input('Cadastrar novo doador? 0 - Não 1 - Sim '))
