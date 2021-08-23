@@ -37,3 +37,6 @@ valor = float(input('Valor doado: '))
 #usei o valor como float para aceita valores quebrados, porem acima de $10
 cadastra_doador(doador, valor)
 opcao = int(input('Cadastrar novo doador? 0 - Não 1 - Sim '))
+if len(doadores) > 0:
+print(f'Lista participantes: {doadores}')
+print(f'O sorteado foi: {lista_sorteio()}')
