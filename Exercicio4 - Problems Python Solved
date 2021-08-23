@@ -1,0 +1,44 @@
+Exercício 4:
+Considere a tabela a seguir referente a produtos
+armazenados em
+um depósito, em
+que são considerados o estoque
+atual de cada produto e o estoque
+mínimo necessá-
+rio. Código
+Estoque Mínimo
+1 35 20
+5 75 50
+2 43 45
+3 26 18
+20 35 20
+Solução do aluno:
+#EXERC4_
+lista = []
+def cadastro_produto(produto_para_cadastrar: dict):
+lista.append(produto_para_cadastrar)
+return
+opcao = int(input('Cadastrar novo produto? 0 - Não 1 - Sim '))
+while opcao == 1:
+produtoincluir = {}
+produtoincluir['codigo'] = int(input('Código: '))if produtoincluir['codigo'] == 0:
+print('Código 0, fechando lista de produtos.')
+break
+#break para parar a funçao
+produtoincluir['estoque'] = int(input('Quantidade em estoque: '))
+produtoincluir['minimo'] = int(input('Quantidade mínima em estoque: '))
+cadastro_produto(produtoincluir)
+opcao = int(input('Cadastrar outro produto? 0 - Não 1 - Sim '))
+#Usei o int para rejeitar numeros nao inteiros
+if len(lista) > 0:
+print('Lista de produtos por código em ordem crescente:')
+print("Código".center(10), end='')
+print("Estoque".center(10), end='')
+print("Mínimo".center(10))
+#usei o center como reserva de caracteres para 10
+for produto in sorted(lista, key=lambda item: item['codigo']):
+print(str(produto['codigo']).center(10), end='')
+print(str(produto['estoque']).center(10), end='')
+print(str(produto['minimo']).center(10))
+else:
+print('Vazio.')
